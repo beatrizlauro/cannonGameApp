@@ -1,4 +1,4 @@
-# 💣 Cannon Game - Programação III
+;# 💣 Cannon Game - Programação III
 
 Aplicação desenvolvida como projeto final da disciplina **Programação
 III**, baseada no capítulo 6 do livro\
