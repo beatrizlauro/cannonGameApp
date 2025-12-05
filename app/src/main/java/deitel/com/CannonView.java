@@ -61,7 +61,7 @@ public class CannonView extends SurfaceView implements SurfaceHolder.Callback {
     public static final double BLOCKER_SPEED_PERCENT = 1.0;
 
     // text size 1/18 of screen width
-    public static final double TEXT_SIZE_PERCENT = 1.0 / 18;
+    public static final double TEXT_SIZE_PERCENT = 1.0 / 30;
 
     private CannonThread cannonThread; // controls the game loop
     private Activity activity; // to display Game Over dialog in GUI thread
@@ -314,10 +314,13 @@ public class CannonView extends SurfaceView implements SurfaceHolder.Callback {
                     }
                 };
 
-        // in GUI thread, use FragmentManager to display the DialogFragment
         activity.runOnUiThread(
                 new Runnable() {
                     public void run() {
+                        if (activity.isFinishing()) {
+                            return;
+                        }
+
                         showSystemBars();
                         dialogIsDisplayed = true;
                         gameResult.setCancelable(false); // modal dialog
