@@ -43,7 +43,7 @@ public class Cannon {
                 view.getScreenWidth() * -Math.cos(barrelAngle));
 
         int radius = (int) (view.getScreenHeight() *
-                CannonView.CANNON_RADIUS_PERCENT);
+                CannonView.CANNONBALL_RADIUS_PERCENT);
 
         cannonball = new Cannonball (view, Color.BLACK,
                 CannonView.CANNON_SOUND_ID, -radius,
