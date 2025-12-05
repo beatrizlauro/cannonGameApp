@@ -34,6 +34,24 @@ public class Cannon {
     }
 
     //Topico 6.11.3
+//    public void fireCannonball(){
+//
+//        int velocityX = (int) (CannonView.CANNONBALL_SPEED_PERCENT *
+//                view.getScreenWidth() * Math.sin(barrelAngle));
+//
+//        int velocityY = (int) (CannonView.CANNONBALL_SPEED_PERCENT *
+//                view.getScreenWidth() * -Math.cos(barrelAngle));
+//
+//        int radius = (int) (view.getScreenHeight() *
+//                CannonView.CANNONBALL_RADIUS_PERCENT);
+//
+//        cannonball = new Cannonball (view, Color.BLACK,
+//                CannonView.CANNON_SOUND_ID, -radius,
+//                view.getScreenHeight() / 2 - radius, radius, velocityX,
+//                velocityY);
+//
+//        cannonball.playSound();
+//    }
     public void fireCannonball(){
 
         int velocityX = (int) (CannonView.CANNONBALL_SPEED_PERCENT *
@@ -46,8 +64,8 @@ public class Cannon {
                 CannonView.CANNONBALL_RADIUS_PERCENT);
 
         cannonball = new Cannonball (view, Color.BLACK,
-                CannonView.CANNON_SOUND_ID, -radius,
-                view.getScreenHeight() / 2 - radius, radius, velocityX,
+                CannonView.CANNON_SOUND_ID, barrelEnd.x - radius, // X inicial
+                barrelEnd.y - radius, radius, velocityX, // Y inicial
                 velocityY);
 
         cannonball.playSound();
