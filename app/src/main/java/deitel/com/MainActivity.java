@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity implements CannonView.Cannon
 
     @Override
     public void resetGame() {
-        // Obtemos o fragmento do container
         MainActivityFragment fragment = (MainActivityFragment)
                 getSupportFragmentManager().findFragmentById(R.id.fragmentContainer);
 

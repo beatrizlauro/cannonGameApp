@@ -27,13 +27,11 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class CannonView extends SurfaceView implements SurfaceHolder.Callback {
-
     private static final String TAG = "CannonView";
 
     public static final int MISS_PENALTY = 2;
     public static final int HIT_REWARD = 3;
 
-    // Percentuais de elementos do jogo
     public static final double CANNON_BASE_RADIUS_PERCENT = 3.0 / 40;
     public static final double CANNON_BARREL_WIDTH_PERCENT = 3.0 / 40;
     public static final double CANNON_BARREL_LENGTH_PERCENT = 1.0 / 10;
@@ -121,9 +119,7 @@ public class CannonView extends SurfaceView implements SurfaceHolder.Callback {
         if (soundPool != null) soundPool.play(soundMap.get(soundId), 1, 1, 1, 0, 1f);
     }
 
-    /** =================== NOVO JOGO =================== */
     public void newGame() {
-        // pausa a thread antes de reiniciar
         if (cannonThread != null) cannonThread.setRunning(false);
 
         cannon = new Cannon(this,
@@ -165,7 +161,6 @@ public class CannonView extends SurfaceView implements SurfaceHolder.Callback {
         gameOver = false;
         dialogIsDisplayed = false;
 
-        // reinicia a thread
         if (cannonThread != null) cannonThread.setRunning(true);
 
         hideSystemBars();
@@ -364,7 +359,6 @@ public class CannonView extends SurfaceView implements SurfaceHolder.Callback {
                             View.SYSTEM_UI_FLAG_IMMERSIVE);
     }
 
-    // ======================= DIALOG FRAGMENT =======================
     public static class GameOverDialog extends DialogFragment {
 
         private static final String ARG_MESSAGE_ID = "messageId";
@@ -404,7 +398,6 @@ public class CannonView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
-    // ======================= INTERFACE =======================
     public interface CannonActivityCallback {
         void resetGame();
     }

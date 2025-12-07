@@ -15,7 +15,6 @@ public class Cannon {
     private Paint paint = new Paint();
     private CannonView view;
 
-    //constructor
     public Cannon(CannonView view, int baseRadius, int barrelLenght, int barrelWidth){
         this.view = view;
         this.baseRadius = baseRadius;
@@ -90,11 +89,4 @@ public class Cannon {
     public void removeCannonball(){
         cannonball = null;
     }
-
-
-
-
-
-
-
 }

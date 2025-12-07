@@ -42,7 +42,6 @@ public class MainActivityFragment extends Fragment {
         cannonView.releaseResources();
     }
 
-    // Método público que MainActivity vai chamar
     public void resetCannonGame() {
         if (cannonView != null) {
             cannonView.stopGame();

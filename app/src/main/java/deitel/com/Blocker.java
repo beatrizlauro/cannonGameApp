@@ -3,9 +3,7 @@ package deitel.com;
 import android.graphics.Color;
 
 public class Blocker extends GameElement {
-
     private int missPenalty;
-
     public Blocker(CannonView view, int color, int missPenalty,
                    int x, int y, int width, int height, float velocityY) {
 
@@ -14,7 +12,6 @@ public class Blocker extends GameElement {
 
         this.missPenalty = missPenalty;
     }
-
     public int getMissPenalty() {
         return missPenalty;
     }
