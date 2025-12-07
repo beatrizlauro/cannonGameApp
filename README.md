@@ -52,8 +52,9 @@ O projeto deve compilar e executar sem a necessidade de configurações adiciona
 ---
 
 ## 📸 Screenshots
-
-![Demonstração do Cannon Game](assets/exemplo.gif)
+<p align="center">
+  <img src="assets/exemplo.gif" alt="Demonstração do Cannon Game" width="200"/>
+</p>
 
 
 ---
