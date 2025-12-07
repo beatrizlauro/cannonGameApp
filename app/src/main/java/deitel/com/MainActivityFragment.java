@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.fragment.app.Fragment;
 
 public class MainActivityFragment extends Fragment {
@@ -19,6 +18,7 @@ public class MainActivityFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
         cannonView = view.findViewById(R.id.cannonView);
+        cannonView.setActivityCallback((CannonView.CannonActivityCallback) getActivity());
 
         return view;
     }
@@ -26,8 +26,7 @@ public class MainActivityFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
-        // allow volume buttons to set game volume
+        // Permite que os botões de volume controlem o volume do jogo
         getActivity().setVolumeControlStream(AudioManager.STREAM_MUSIC);
     }
 
@@ -41,5 +40,13 @@ public class MainActivityFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         cannonView.releaseResources();
+    }
+
+    // Método público que MainActivity vai chamar
+    public void resetCannonGame() {
+        if (cannonView != null) {
+            cannonView.stopGame();
+            cannonView.newGame();
+        }
     }
 }
